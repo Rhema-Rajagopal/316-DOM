@@ -4,53 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Restaurant</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
-      }
-      .container {
-        max-width: 800px;
-        margin: 20px auto;
-        padding: 20px;
-        background-color: #fff;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
-      h1,
-      h2 {
-        text-align: center;
-        color: #333;
-      }
-      p {
-        margin: 0;
-        color: #666;
-      }
-      .menu-item {
-        display: inline-block;
-        border-bottom: 1px solid #ccc;
-        padding: 10px;
-        cursor: pointer;
-        transition: transform 0.3s ease;
-      }
-      .menu-item:hover {
-        transform: scale(1.05);
-      }
-      form {
-        margin-top: 20px;
-      }
-      input[type="submit"] {
-        background-color: #4caf50;
-        color: white;
-        padding: 12px 20px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        float: right;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
@@ -69,44 +23,6 @@
       </form>
       <div id="reservationStatus"></div>
     </div>
-    <script>
-      window.addEventListener("DOMContentLoaded", function () {
-        const menuItems = [
-          { name: "Spaghetti Carbonara", price: "$12.99" },
-          { name: "Grilled Salmon", price: "$15.99" },
-          { name: "Chicken Caesar Salad", price: "$10.99" },
-          { name: "Margherita Pizza", price: "$11.99" },
-          { name: "Beef Burger", price: "$9.99" },
-          { name: "Vegetable Stir Fry", price: "$8.99" },
-        ];
-
-        const menuItemsContainer = document.querySelector("#menuItems");
-
-        // Append menu items
-        menuItems.forEach((item, index) => {
-          const menuItem = document.createElement("div");
-          menuItem.classList.add("menu-item");
-          menuItem.innerHTML = `<h3>${item.name}</h3><p>${item.price}</p>`;
-          menuItemsContainer.appendChild(menuItem);
-        });
-
-        // Event listener for form submission
-        document
-          .getElementById("reservationForm")
-          .addEventListener("submit", function (event) {
-            event.preventDefault(); // Prevent default form submission behavior
-            const name = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            const reservationStatus =
-              document.getElementById("reservationStatus");
-            reservationStatus.innerHTML = `<p>Thank you, ${name}! Your reservation has been made. We'll send a confirmation email to ${email} shortly.</p>`;
-          });
-
-        // Prepend a notice at the beginning of the menu
-        const notice = document.createElement("div");
-        notice.innerHTML = "<p>Check out our special of the day!</p>";
-        menuItemsContainer.prepend(notice);
-      });
-    </script>
+    <script src="index.js"></script>
   </body>
 </html>
